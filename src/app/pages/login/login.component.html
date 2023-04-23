@@ -1,0 +1,33 @@
+<div class="background">
+  <div class="shape"></div>
+  <div class="shape"></div>
+</div>
+<form [formGroup]="LoginForm">
+  <h3>Login Here</h3>
+ <mat-form-field appearance="outline" floatLabel="always" color="warn" >
+   <mat-label>Email</mat-label>
+   <mat-icon matPrefix>email</mat-icon>
+   <input matInput type="text" placeholder="email" formControlName="email">
+ </mat-form-field>
+
+
+  <mat-form-field appearance="outline" floatLabel="always" color="warn" >
+    <mat-label>Password</mat-label>
+
+    <mat-icon matPrefix>lock</mat-icon>
+    <input  matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    <mat-hint *ngIf="passwordInput && !passwordInput.value">Enter your password</mat-hint>
+  </mat-form-field>
+<!--  <label for="username">Username</label>-->
+<!--  <input type="text" placeholder="Email or Phone" id="username">-->
+
+<!--  <label for="password">Password</label>-->
+<!--  <input type="password" placeholder="Password" id="password">-->
+
+  <button>Log In</button>
+  <div class="social">
+    <div class="go"><i class="fab fa-google"></i>  Google</div>
+    <div class="fb"><i class="fab fa-facebook"></i>  Facebook</div>
+  </div>
+</form>
